@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        header {
+            height: 50px;
+            width: 100%;
+            background-color: #ccc;
+            border-bottom: 1px solid #888;
+            margin-bottom: 20px;
+        }
+
+        aside {
+            text-align: left;
+            padding-left: 15px;
+            height: auto;
+            max-height: calc(100vh - 50px);
+            overflow: auto;
+            background-color: #ccc;
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        main {
+            display: inline-block;
+            width: 80%;
+            margin-left: -4px;
+            height: calc(100vh - 50px);
+            vertical-align: top;
+            padding: 10px 15px 0 15px;
+            overflow: auto;
+        }
+
+        article {
+            width: 100%;
+        }
+
+        section {
+            width: calc(25% - 10px);
+            height: 400px;
+            background-color: #ccc;
+            display: inline-block;
+            border: 1px solid #888;
+            margin-bottom: 10px;
+        }
+
+        /* section:nth-child(n),
+        section:nth-child(2n) {
+            margin-right: 11px;
+        } */
+
+        section:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        footer {
+            height: 30px;
+            width: 100%;
+            background-color: #ccc;
+            border: 1px solid #888;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside>
+        Sidebar menu
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+    </aside>
+    <main>
+        <header>
+            Header
+        </header>
+        <article>
+            <section>Product 1</section>
+            <section>Product 2</section>
+            <section>Product 3</section>
+            <section>Product 4</section>
+            <section>Product 5</section>
+            <section>Product 6</section>
+            <section>Product 7</section>
+            <section>Product 8</section>
+            <section>Product 9</section>
+            <section>Product 10</section>
+            <section>Product n</section>
+            <section>Product n</section>
+            <section>Product n</section>
+            <section>Product n</section>
+            <section>Product n</section>
+            <section>Product n</section>
+            <section>Product n</section>
+            <section>Product n</section>
+        </article>
+        <footer>
+            Footer
+        </footer>
+    </main>
+</body>
+
+</html>
