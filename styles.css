@@ -1,8 +1,7 @@
-html,
-body {
+html, body {
     padding: 0;
-    margin: 0;
     overflow: hidden;
+    margin: 0;
 }
 
 * {
@@ -10,10 +9,11 @@ body {
 }
 
 header {
-    height: 100px;
+    height: 135px;
     width: 100%;
 }
-header .filter-heading{
+
+header .filter-heading {
     margin-bottom: 10px;
 }
 
@@ -42,25 +42,28 @@ main {
 article {
     width: 100%;
     background: #1e1c1c;
-    padding:10px;
+    padding: 10px;
 }
 
 section {
     width: calc(25% - 10px);
     height: 400px;
-    background-color:#352f2f;
+    background-color: #352f2f;
     display: inline-block;
     margin-bottom: 10px;
     border-radius: 7px;
 }
-section img{
+
+section img {
     width: 100%;
     height: 200px;
 }
-.top-section{
-position: relative;
+
+.top-section {
+    position: relative;
 }
-.image-text{
+
+.image-text {
     color: #fff;
     width: 100%;
     padding: 5px 15px;
@@ -71,14 +74,15 @@ position: relative;
     left: 0;
     font-size: 12px;
 }
-.image-text .name{
+
+.image-text .name {
     font-size: 24px;
 }
 
 section:nth-child(n)
-
 /*,
 section:nth-child(2n) */
+
     {
     margin-right: 8px;
 }
@@ -86,54 +90,88 @@ section:nth-child(2n) */
 section:nth-child(4n) {
     margin-right: 0;
 }
-.filters{
+
+.filters {
     display: inline-block;
     border: #888 solid;
-    padding:20px;
+    padding: 20px;
 }
-.filters-container{
-    padding:20px;
+
+.filters-container {
+    padding: 20px;
 }
-.filter-heading{
+
+.filter-heading {
     font-size: 28px;
 }
-.filters .heading{
+
+.filters .heading {
     font-size: 16px;
     font-weight: 800;
 }
-.selected-filter{
+
+.selected-filter {
     display: inline-block;
     background: #817979;
     padding: 5px;
     border-radius: 5px;
 }
-section ul{
-    padding:0;
+
+section ul {
+    padding: 0;
 }
-section li{
-    list-style: none;
-    padding: 7px 20px;
-   font-size: 10px;
+
+input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
 }
-.list-item{ 
-    color:white;
-    border-bottom:solid white 1px;
-    padding:2px;
+.search-container{
+    display: inline-block;
 }
-.cross{
-    display: inline;
-}
-.cross:hover{
+.search-container button {
+    float: right;
+    padding: 8px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
     cursor: pointer;
 }
 
-.value{
+.search-container button:hover {
+    background: #ccc;
+}
+
+section li {
+    list-style: none;
+    padding: 7px 20px;
+    font-size: 10px;
+}
+
+.list-item {
+    color: white;
+    border-bottom: solid white 1px;
+    padding: 2px;
+}
+
+.cross {
+    display: inline;
+}
+
+.cross:hover {
+    cursor: pointer;
+}
+
+.value {
     display: inline-block;
     float: right;
     color: #d77f40;
     max-width: 50%;
     text-transform: capitalize;
 }
+
 footer {
     height: 30px;
     width: 100%;
