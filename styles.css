@@ -1,0 +1,98 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    height: 100px;
+    width: 100%;
+}
+header .filter-heading{
+    margin-bottom: 10px;
+}
+
+aside {
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 10px;
+    height: auto;
+    max-height: calc(100vh - 50px);
+    overflow: auto;
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+main {
+    display: inline-block;
+    width: 80%;
+    margin-left: -4px;
+    height: calc(100vh - 50px);
+    vertical-align: top;
+    padding: 10px 15px 0 15px;
+    overflow: auto;
+}
+
+article {
+    width: 100%;
+}
+
+section {
+    width: calc(25% - 10px);
+    height: 400px;
+    background-color: rgb(148, 134, 134);
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+section:nth-child(n)
+
+/*,
+section:nth-child(2n) */
+    {
+    margin-right: 8px;
+}
+
+section:nth-child(4n) {
+    margin-right: 0;
+}
+.filters{
+    display: inline-block;
+    border: #888 solid;
+    padding:20px;
+}
+.filters-container{
+    padding:20px;
+}
+.filter-heading{
+    font-size: 28px;
+}
+.filters .heading{
+    font-size: 16px;
+    font-weight: 800;
+}
+.selected-filter{
+    display: inline-block;
+    background: #a9a9a9;
+    padding: 5px;
+    border-radius: 5px;
+}
+.cross{
+    display: inline;
+}
+.cross:hover{
+    cursor: pointer;
+}
+footer {
+    height: 30px;
+    width: 100%;
+    background-color: #ccc;
+    border: 1px solid #888;
+    margin-bottom: 10px;
+}

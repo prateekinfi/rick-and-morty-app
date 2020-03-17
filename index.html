@@ -2,115 +2,49 @@
 <html>
 
 <head>
-    <style>
-        html,
-        body {
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        header {
-            height: 50px;
-            width: 100%;
-            background-color: #ccc;
-            border-bottom: 1px solid #888;
-            margin-bottom: 20px;
-        }
-
-        aside {
-            text-align: left;
-            padding-left: 15px;
-            height: auto;
-            max-height: calc(100vh - 50px);
-            overflow: auto;
-            background-color: #ccc;
-            width: 20%;
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        main {
-            display: inline-block;
-            width: 80%;
-            margin-left: -4px;
-            height: calc(100vh - 50px);
-            vertical-align: top;
-            padding: 10px 15px 0 15px;
-            overflow: auto;
-        }
-
-        article {
-            width: 100%;
-        }
-
-        section {
-            width: calc(25% - 10px);
-            height: 400px;
-            background-color: rgb(148, 134, 134);
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        section:nth-child(n)
-
-        /*,
-        section:nth-child(2n) */
-            {
-            margin-right: 8px;
-        }
-
-        section:nth-child(4n) {
-            margin-right: 0;
-        }
-
-        footer {
-            height: 30px;
-            width: 100%;
-            background-color: #ccc;
-            border: 1px solid #888;
-            margin-bottom: 10px;
-        }
-        
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Ricky and Morty Show</title>
 </head>
 
 <body>
 
     <aside>
-        Sidebar menu
-        <div class="fliter-heading">Filter</div>
-        <div class="filters">Species
-            <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
-            </div>
-            <div class="checkbox"><input type="checkbox" name="dummmy2" id="dummy11"><label for="dummy1">dsa</label>
-            </div>
-            <div class="checkbox"><input type="checkbox" name="dummmy1" id="dummy111"><label for="dummy1">dsad</label>
-            </div>
-        </div>
-        <div class="filters">Gender
-            <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
-            </div>
-            <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
-            </div>
-            <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+        <div class="filter-heading">Filters</div>
+        <div class="filters-container">
+            <div class="filters" id="species"><span class="heading">Species</span>
+                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                </div>
+                <div class="checkbox"><input type="checkbox" name="dummmy2" id="dummy11"><label for="dummy1">dsa</label>
+                </div>
+                <div class="checkbox"><input type="checkbox" name="dummmy1" id="dummy111"><label for="dummy1">dsad</label>
+                </div>
             </div>
         </div>
-        <div class="filters">Origin
-            <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
-            </div>
-            <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+        <div class="filters-container">
+            <div class="filters" id="gender"><span class="heading">Gender</span>
+                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                </div>
+                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                </div>
+                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                </div>
             </div>
         </div>
-
+        <div class="filters-container">
+            <div class="filters" id="origin"><span class="heading">Origin</span>
+                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                </div>
+                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                </div>
+            </div>
+        </div>
     </aside>
     <main>
         <header>
-            Header
+            <div class="filter-heading">Selected Filters</div>
+            <div id="selected-filter-container" class="selected-filter-container">
+                <div class="selected-filter" id="selected-filter">Human <div class="cross" id="cross">X</div>
+            </div>
         </header>
         <article>
             <section>
@@ -147,9 +81,7 @@
                 </ul>
             </section>
         </article>
-        <footer>
-            Footer
-        </footer>
+
     </main>
 </body>
 
