@@ -41,14 +41,38 @@ main {
 
 article {
     width: 100%;
+    background: #1e1c1c;
+    padding:10px;
 }
 
 section {
     width: calc(25% - 10px);
     height: 400px;
-    background-color: rgb(148, 134, 134);
+    background-color:#352f2f;
     display: inline-block;
     margin-bottom: 10px;
+    border-radius: 7px;
+}
+section img{
+    width: 100%;
+    height: 200px;
+}
+.top-section{
+position: relative;
+}
+.image-text{
+    color: #fff;
+    width: 100%;
+    padding: 5px 15px;
+    background: black;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    font-size: 12px;
+}
+.image-text .name{
+    font-size: 24px;
 }
 
 section:nth-child(n)
@@ -79,15 +103,36 @@ section:nth-child(4n) {
 }
 .selected-filter{
     display: inline-block;
-    background: #a9a9a9;
+    background: #817979;
     padding: 5px;
     border-radius: 5px;
+}
+section ul{
+    padding:0;
+}
+section li{
+    list-style: none;
+    padding: 7px 20px;
+   font-size: 10px;
+}
+.list-item{ 
+    color:white;
+    border-bottom:solid white 1px;
+    padding:2px;
 }
 .cross{
     display: inline;
 }
 .cross:hover{
     cursor: pointer;
+}
+
+.value{
+    display: inline-block;
+    float: right;
+    color: #d77f40;
+    max-width: 50%;
+    text-transform: capitalize;
 }
 footer {
     height: 30px;
