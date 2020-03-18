@@ -143,6 +143,9 @@ input[type=text] {
 .search-container button:hover {
     background: #ccc;
 }
+.sorting-container{
+    float: right;
+}
 
 section li {
     list-style: none;
@@ -152,7 +155,7 @@ section li {
 
 .list-item {
     color: white;
-    border-bottom: solid white 1px;
+    border-bottom: 1px solid rgb(68, 68, 68);
     padding: 2px;
 }
 
@@ -167,7 +170,7 @@ section li {
 .value {
     display: inline-block;
     float: right;
-    color: #d77f40;
+    color: rgb(255, 152, 0);
     max-width: 50%;
     text-transform: capitalize;
 }
