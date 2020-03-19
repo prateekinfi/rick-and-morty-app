@@ -5,15 +5,15 @@ var contentHandler = (async function () {
     let response = await fetch(`https://rickandmortyapi.com/api/character/`);
 
     //private variables
-    data = await response.json()
-    currentData = {};
+    data = await response.json();
 
     //private functions
     var listData = function (data) {
         $("article").empty("");
 
         for (var i = 0; i < data.results.length; i++) {
-            var charCard = `<section> <div class="top-section"><img src="${data.results[i].image}" alt=""> <span class="image-text"> <span class="name">${data.results[i].name}</span><br> id : ${data.results[i].id} - created ${data.results[i].created} </span> </div> <ul> <li> <div class="list-item"> <span class="property">STATUS</span> <div class="value">${data.results[i].status}</div> </div> </li> <li> <div class="list-item"> <span class="property">SPECIES</span> <div class="value">${data.results[i].species}</div> </div> </li> <li> <div class="list-item"> <span class="property">GENDER</span> <div class="value">${data.results[i].gender}</div> </div> </li> <li> <div class="list-item"> <span class="property">ORIGIN</span> <div class="value">${data.results[i].origin.name}</div> </div> </li> <li> <div class="list-item"> <span class="property">LAST LOCATION</span> <div class="value">${data.results[i].location.name}</div> </div> </li> </ul> </section>`;
+            var created =new Number((new Date().getTime() - new Date(data.results[i].created).getTime()) / 31536000000).toFixed(0);
+            var charCard = `<section> <div class="top-section"><img src="${data.results[i].image}" alt=""> <span class="image-text"> <span class="name">${data.results[i].name}</span><br> id : ${data.results[i].id} - created ${created} years ago </span> </div> <ul> <li> <div class="list-item"> <span class="property">STATUS</span> <div class="value">${data.results[i].status}</div> </div> </li> <li> <div class="list-item"> <span class="property">SPECIES</span> <div class="value">${data.results[i].species}</div> </div> </li> <li> <div class="list-item"> <span class="property">GENDER</span> <div class="value">${data.results[i].gender}</div> </div> </li> <li> <div class="list-item"> <span class="property">ORIGIN</span> <div class="value">${data.results[i].origin.name}</div> </div> </li> <li> <div class="list-item"> <span class="property">LAST LOCATION</span> <div class="value">${data.results[i].location.name}</div> </div> </li> </ul> </section>`;
             $("article").append(charCard);
         }
     };
@@ -21,7 +21,9 @@ var contentHandler = (async function () {
         $("article").empty("");
 
         for (var i = data.results.length - 1; i >= 0; i--) {
-            var charCard = `<section> <div class="top-section"><img src="${data.results[i].image}" alt=""> <span class="image-text"> <span class="name">${data.results[i].name}</span><br> id : ${data.results[i].id} - created ${data.results[i].created} </span> </div> <ul> <li> <div class="list-item"> <span class="property">STATUS</span> <div class="value">${data.results[i].status}</div> </div> </li> <li> <div class="list-item"> <span class="property">SPECIES</span> <div class="value">${data.results[i].species}</div> </div> </li> <li> <div class="list-item"> <span class="property">GENDER</span> <div class="value">${data.results[i].gender}</div> </div> </li> <li> <div class="list-item"> <span class="property">ORIGIN</span> <div class="value">${data.results[i].origin.name}</div> </div> </li> <li> <div class="list-item"> <span class="property">LAST LOCATION</span> <div class="value">${data.results[i].location.name}</div> </div> </li> </ul> </section>`;
+            var created =new Number((new Date().getTime() - new Date(data.results[i].created).getTime()) / 31536000000).toFixed(0);
+
+            var charCard = `<section> <div class="top-section"><img src="${data.results[i].image}" alt=""> <span class="image-text"> <span class="name">${data.results[i].name}</span><br> id : ${data.results[i].id} - created ${created} years ago </span> </div> <ul> <li> <div class="list-item"> <span class="property">STATUS</span> <div class="value">${data.results[i].status}</div> </div> </li> <li> <div class="list-item"> <span class="property">SPECIES</span> <div class="value">${data.results[i].species}</div> </div> </li> <li> <div class="list-item"> <span class="property">GENDER</span> <div class="value">${data.results[i].gender}</div> </div> </li> <li> <div class="list-item"> <span class="property">ORIGIN</span> <div class="value">${data.results[i].origin.name}</div> </div> </li> <li> <div class="list-item"> <span class="property">LAST LOCATION</span> <div class="value">${data.results[i].location.name}</div> </div> </li> </ul> </section>`;
             $("article").append(charCard);
         }
     };
@@ -43,10 +45,6 @@ var contentHandler = (async function () {
 
             }
         }
-
-        console.log(fliteredData);
-
-
         return fliteredData;
     };
 
@@ -67,9 +65,30 @@ var contentHandler = (async function () {
     }
 
 
-    var filterCharacters = function (property, filter) {
-        currentData = filterData(data, property, filter);
-        // console.log(data);
+    var filterCharacters = function () {
+        var currentData = {};
+        var selectedFilterElement = $('.selected-filter');
+        var filters = { gender: null, species: null, origin: { name: null } };
+        for (var i = 0; i < selectedFilterElement.length; i++) {
+            var property = $($('.selected-filter')[i]).attr("id").substr(16);
+            if (property != "origin") {
+                filters[property] = $($('.selected-filter')[i]).data('name');
+            } else {
+                filters.origin.name = $($('.selected-filter')[i]).data('name');
+            }
+        }
+        if (filters.gender != null) {
+            currentData = filterData(data, "gender", filters.gender);
+        } else {
+            currentData = data;
+        }
+        if (filters.species != null) {
+            currentData = filterData(currentData, "species", filters.species);
+        }
+        if (filters.origin.name != null) {
+            currentData = filterData(currentData, "origin", filters.origin.name);
+        }
+
         listData(currentData);
 
     }
@@ -100,7 +119,6 @@ contentHandler.then(x => {
 
 
     $("#submit-search").on("click", () => {
-        //alert("here");
         var searchName = $("#search-box").val();
         if (searchName != "") {
             x.search(searchName);
@@ -113,7 +131,7 @@ contentHandler.then(x => {
     });
     $("#clear-filters").on("click", () => {
         x.listAllCharacters();
-        $('input:checked').prop("checked", false);  
+        $('input:checked').prop("checked", false);
         $('#selected-filter-container').empty();
     });
 
@@ -126,12 +144,27 @@ contentHandler.then(x => {
     $('input[type="checkbox"]').on('change', function (e) {
 
         if (!$(this).is(":checked")) {
-            //alert();
             this.checked = !this.checked;
         } else {
             $(this).closest(".filters").find('input[type="checkbox"]').not(this).prop('checked', false);
+
+            $(`#selected-filter-${$(this).closest(".filters").attr("id")}`).remove();
+            $('#selected-filter-container').append(`
+            <div class="selected-filter" id="selected-filter-${$(this).closest(".filters").attr("id")}" data-name="${$(this).attr("name")}">${$(this).attr("name")} <div class="cross" id="cross-${$(this).closest(".filters").attr("id")}">X</div>
+                </div>
+            `);
             x.filter($(this).closest(".filters").attr("id"), $(this).attr("name"));
         }
+    });
+
+    $(document).on("click", ".cross", function () {
+
+        var prop = $(this).closest(".selected-filter").attr("id").substr(16);
+        $(this).closest(".selected-filter").remove();
+
+        $(`#${prop} input:checked`).prop("checked", false);
+        x.filter(prop, $($(this).closest(".selected-filter")).data('name'));
+
     });
 
 

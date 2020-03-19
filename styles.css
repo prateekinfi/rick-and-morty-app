@@ -51,7 +51,6 @@ section {
     background-color: #352f2f;
     display: inline-block;
     margin-bottom: 15px;
-    overflow: hidden;
     border-radius: 7px;
 }
 
@@ -188,4 +187,45 @@ footer {
     width: 100%;
     float: left;
     margin-bottom: 10px;
+}
+
+@media(max-width :480px) {
+    main, aside {
+        display: block;
+        width: 100%;
+    }
+    main{
+        overflow: initial;
+    }
+    aside {
+        padding-left: 0;
+    }
+    header {
+        height: 250px;
+    }
+    .filters {
+        width: 100%;
+    }
+    body {
+        overflow: scroll;
+    }
+    article {
+        background: white;
+    }
+    section {
+        width: calc(50% - 15px);
+    }
+    input[type=text] {
+        width: 100%;
+    }
+    .sorting-container {
+        margin-top: 25px;
+        width: 100%;
+    }
+    #sort-by-id {
+        width: 100%;
+    }
+    .filter-heading {
+        padding-left: 11px;
+    }
 }
