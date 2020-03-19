@@ -14,29 +14,29 @@
         <div class="filter-heading">Filters</div>
         <div class="filters-container">
             <div class="filters" id="species"><span class="heading">Species</span>
-                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                <div class="checkbox"><input type="checkbox" name="human" id="human"><label for="human">Human</label>
                 </div>
-                <div class="checkbox"><input type="checkbox" name="dummmy2" id="dummy11"><label for="dummy1">dsa</label>
-                </div>
-                <div class="checkbox"><input type="checkbox" name="dummmy1" id="dummy111"><label for="dummy1">dsad</label>
+                <div class="checkbox"><input type="checkbox" name="alien" id="alien"><label for="alien">Alien</label>
                 </div>
             </div>
         </div>
         <div class="filters-container">
             <div class="filters" id="gender"><span class="heading">Gender</span>
-                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                <div class="checkbox"><input type="checkbox" name="male" id="male"><label for="male">Male</label>
                 </div>
-                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                <div class="checkbox"><input type="checkbox" name="female" id="female"><label for="female">Female</label>
                 </div>
-                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                <div class="checkbox"><input type="checkbox" name="unknown" id="unknown"><label for="unknown">Unknown</label>
                 </div>
             </div>
         </div>
         <div class="filters-container">
             <div class="filters" id="origin"><span class="heading">Origin</span>
-                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                <div class="checkbox"><input type="checkbox" name="unknown" id="unknown"><label for="unknown">Unknown</label>
                 </div>
-                <div class="checkbox"><input type="checkbox" name="dummmy3" id="dummy1"><label for="dummy1">dssa</label>
+                <div class="checkbox"><input type="checkbox" name="abadango" id="abadango"><label for="abadango">Abadango</label>
+                </div>
+                <div class="checkbox"><input type="checkbox" name="earth (c-137)" id="earth-c-137"><label for="earth-c-137">Earth (C-137)</label>
                 </div>
             </div>
         </div>
@@ -49,10 +49,11 @@
                 </div>
             </div>
             <div class="search-container">
-                <form action="">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit">Submit</button>
-                </form>
+                    <input type="text" placeholder="Search.." id="search-box" name="search">
+                    <button id="submit-search">Submit</button>
+                    <button id="clear-search">Clear search</button>
+                    <button id="clear-filters">Clear filters</button>
+
             </div>
             <div class="sorting-container" id="sort-by-id-container">
                 <select name="sort-by-id" id="sort-by-id">
@@ -67,7 +68,6 @@
            
 
         </article>
-
     </main>
 </body>
 

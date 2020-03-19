@@ -112,6 +112,10 @@ section:nth-child(4n) {
     font-weight: 800;
 }
 
+.selected-filter-container {
+    height: 40px;
+}
+
 .selected-filter {
     display: inline-block;
     background: #817979;
@@ -128,11 +132,12 @@ input[type=text] {
     margin-top: 8px;
     font-size: 17px;
 }
-.search-container{
+
+.search-container {
     display: inline-block;
 }
+
 .search-container button {
-    float: right;
     padding: 8px;
     margin-top: 8px;
     margin-right: 16px;
@@ -145,7 +150,8 @@ input[type=text] {
 .search-container button:hover {
     background: #ccc;
 }
-.sorting-container{
+
+.sorting-container {
     float: right;
 }
 
@@ -180,7 +186,6 @@ section li {
 footer {
     height: 30px;
     width: 100%;
-    background-color: #ccc;
-    border: 1px solid #888;
+    float: left;
     margin-bottom: 10px;
 }
