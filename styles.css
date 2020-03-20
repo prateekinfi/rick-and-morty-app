@@ -1,6 +1,5 @@
 html, body {
     padding: 0;
-    overflow: hidden;
     margin: 0;
 }
 
@@ -196,6 +195,7 @@ footer {
     }
     main{
         overflow: initial;
+        height: auto;
     }
     aside {
         padding-left: 0;
@@ -205,9 +205,6 @@ footer {
     }
     .filters {
         width: 100%;
-    }
-    body {
-        overflow: scroll;
     }
     article {
         background: white;
