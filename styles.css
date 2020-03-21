@@ -155,14 +155,17 @@ input[type=text] {
 
 section li {
     list-style: none;
-    padding: 7px 20px;
-    font-size: 10px;
+    padding: 7px 8px;
+    font-size: 9px;
 }
-
+.property{
+    float: left;
+}
 .list-item {
     color: white;
     border-bottom: 1px solid rgb(68, 68, 68);
     padding: 2px;
+    text-align: right;
 }
 
 .cross {
@@ -175,10 +178,10 @@ section li {
 
 .value {
     display: inline-block;
-    float: right;
     color: rgb(255, 152, 0);
     max-width: 50%;
     text-transform: capitalize;
+    text-align: right;
 }
 
 footer {
