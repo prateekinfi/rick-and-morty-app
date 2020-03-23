@@ -48,24 +48,7 @@ var contentHandler = (async function () {
         return fliteredData;
     };
 
-
-
-    //exposed functions
-    var listAll = function () {
-        listData(data)
-    };
-
-    var sortData = function (order) {
-        var sortedData = data;
-        if (order == "dsc") {
-            listDataReverse(sortedData);
-        } else {
-            listData(sortedData);
-        }
-    }
-
-
-    var filterCharacters = function () {
+    var getCurrentData = function(){
         var currentData = {};
         var selectedFilterElement = $('.selected-filter');
         var filters = { gender: null, species: null, origin: { name: null } };
@@ -88,7 +71,27 @@ var contentHandler = (async function () {
         if (filters.origin.name != null) {
             currentData = filterData(currentData, "origin", filters.origin.name);
         }
+        return currentData;
+    }
 
+    //exposed functions
+    var listAll = function () {
+        listData(data)
+    };
+
+    var sortData = function (order) {
+        var currentData = getCurrentData();
+
+        if (order == "dsc") {
+            listDataReverse(currentData);
+        } else {
+            listData(currentData);
+        }
+    }
+
+
+    var filterCharacters = function () {
+        var currentData = getCurrentData();
         listData(currentData);
 
     }
