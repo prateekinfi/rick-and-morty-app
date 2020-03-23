@@ -4,7 +4,7 @@ var contentHandler = (async function () {
 
     let response = await fetch(`https://rickandmortyapi.com/api/character/`);
 
-    //private variables
+    //private variable
     data = await response.json();
 
     //private functions
@@ -93,16 +93,10 @@ var contentHandler = (async function () {
 
     }
 
-    var searchCharacters = function (name) {
-        var fliteredData = { results: [] };
-        //filter data
-        var j = 0;
-        for (var i = 0; i < data.results.length; i++) {
-            if (data.results[i].name == name) {
-                fliteredData.results.push(data.results[i]);
-                j++;
-            }
-        }
+    var searchCharacters = async function (name) {
+        let response = await fetch(`https://rickandmortyapi.com/api/character?name=${name}`);
+
+        fliteredData = await response.json();
         listData(fliteredData);
     }
 
